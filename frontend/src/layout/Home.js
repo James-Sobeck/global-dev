@@ -1,12 +1,12 @@
-import react from 'react';
-import Container from 'react-bootstrap/Container';
+import react from "react";
+import Navbar from "./Navbar";
+import Header from "./Header";
 
-export default function Home(){
-    return (
-        <div >
-           
-                test
-            
-        </div>
-    )
+export default function Home() {
+  return (
+    <>
+      <Navbar />
+      <Header />
+    </>
+  );
 }
