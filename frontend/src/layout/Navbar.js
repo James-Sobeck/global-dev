@@ -9,15 +9,15 @@ import { Link } from "react-router-dom";
 export default function NavBar(){
     return(
         <Navbar>
-      <Container fluid>
-        <Navbar.Brand href="#Home" style={{ color: "white" }} >
+      <Container fluid >
+        <Navbar.Brand href="#Home" style={{position: 'absolute', top:'5px'}} >
           <img src={logo} style={{ height: "25px" }} /> The Five Principles
         </Navbar.Brand>
-        <Nav className="me-auto">
-          <Nav.Link href="#About" style={{ color: "white" }}>About</Nav.Link>
-          <Nav.Link href="#Program" style={{ color: "white" }}>Program</Nav.Link>
-          <Nav.Link href="#Contact" style={{ color: "white" }}>Contact</Nav.Link>
-          <Nav.Link style={{ color: "white" }}><Link to="/login"> Log In </Link></Nav.Link>
+        <Nav className="me-auto" style={{display:'flex',marginLeft:'auto', marginRight:'auto'}}>
+          <Nav.Link href="#About" >About</Nav.Link>
+          <Nav.Link href="#Program" >Program</Nav.Link>
+          <Nav.Link href="#Contact" >Contact</Nav.Link>
+          <Nav.Link ><Link to="/login"> Log In </Link></Nav.Link>
         </Nav>
       </Container>
     </Navbar>

@@ -25,14 +25,34 @@ export default function Header(){
         }
     }
     
-    return(
-        <>
-            <h1 style={{color: "white", textAlign: 'center'}}>Welcome to The Five Principles</h1>
-            <img src={logo} style={{height: "150px"}}/>
-            <Button variant="success" onClick={()=>changeButton()}>{text}</Button>{' '}
-            {demo===true && <iframe width="1099" height="471" src="https://www.youtube.com/embed/BaBhJOYa5K8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>}
-        </>
-    )
+    return (
+      <>
+        <h1 style={{  textAlign: "center" }}>
+          Welcome to The Five Principles
+        </h1>
+        <img src={logo} alt="logo" style={{ height: "150px" }} />
+        <div style={{display:'flex', margin:'10px', marginLeft: "auto", marginRight: "auto", justifyContent:"center"}}>
+          <Button
+            
+            onClick={() => changeButton()}
+            
+          >
+            {text}
+          </Button>{" "}
+          {demo === true && (
+            <iframe
+              width="1099"
+              height="471"
+              src="https://www.youtube.com/embed/BaBhJOYa5K8"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            ></iframe>
+          )}
+        </div>
+      </>
+    );
 }
 
 

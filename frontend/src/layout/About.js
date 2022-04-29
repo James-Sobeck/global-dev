@@ -5,7 +5,7 @@ export default function About() {
   return (
     <Container style={{ maxWidth: "1620px" }} id="About">
       <div className="cardHome">
-        <h1 style={{textAlign: 'center'}}>Who We Are</h1>
+        <h1 style={{textAlign: 'center', color:'black'}}>Who We Are</h1>
 
         <Card>
           <Card.Body>
@@ -174,7 +174,7 @@ export default function About() {
       </div>
       <br/>
       <div className="cardHome">
-        <h1 style={{textAlign: 'center'}} id="Contact">Contact Us</h1>
+        <h1 style={{textAlign: 'center', color:'white'}} id="Contact">Contact Us</h1>
         <Card>
           <Card.Body>
             <Card.Text>
