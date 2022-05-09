@@ -5,9 +5,11 @@ import Nav from "react-bootstrap/Nav";
 import logo from "../../img/GlobalUnderstandingLogo.37b38633.png";
 import { Link } from "react-router-dom";
 import { useHistory } from "react-router";
-import {registerUser} from "../../api/api";
+import {loginUser, registerUser} from "../../api/api";
+
 
 export default function Login(){
+  const history = useHistory();
   const initialFormData = {
     email: "",
     password: "",
@@ -27,7 +29,8 @@ export default function Login(){
       e.preventDefault();
       const controller = new AbortController();
       try{
-        await registerUser(formData.email.toString(), formData.password.toString());
+        //history.push("/module1")
+        await loginUser(formData.email.toString(), formData.password.toString()).then(history.push("/modules"));
       } catch (error){
         console.log(error)
       }
@@ -95,13 +98,16 @@ export default function Login(){
                   Sign in
                 </a>{" "}
               </Link>
+
               <span class="inline-flex rounded-md shadow-sm">
-                <a
-                  href="#"
-                  class="inline-flex items-center justify-center px-4 py-2 text-base font-medium leading-6 text-white whitespace-no-wrap bg-[#5b7bf0] border-[#5b7bf0] rounded-md shadow-sm hover:bg-[#435aaf] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#5b7bf0] no-underline"
-                >
-                  Sign up
-                </a>
+                <Link to="/register" class="no-underline">
+                  <a
+                    href="#"
+                    class="inline-flex items-center justify-center px-4 py-2 text-base font-medium leading-6 text-white whitespace-no-wrap bg-[#5b7bf0] border-[#5b7bf0] rounded-md shadow-sm hover:bg-[#435aaf] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#5b7bf0] no-underline"
+                  >
+                    Sign up
+                  </a>
+                </Link>
               </span>
             </div>
           </div>
@@ -111,10 +117,10 @@ export default function Login(){
             <div class="flex flex-col items-center md:flex-row">
               <div class="w-full space-y-5 md:w-3/5 md:pr-16">
                 <h2 class="text-2xl font-extrabold leading-none text-black sm:text-3xl md:text-5xl">
-                  INSERT SOLGAN
+                  Bridging the Gap
                 </h2>
                 <p class="text-xl text-gray-600 md:pr-16">
-                  SUMMERY OF TRAINING THE GOAL OF TRAINING
+                  Between community and Law Enforcement
                 </p>
               </div>
 
@@ -129,8 +135,7 @@ export default function Login(){
                       name="email"
                       id="email"
                       class="block w-full px-4 py-3 mb-4 border border-2 border-transparent border-gray-200 rounded-lg focus:ring focus:ring-blue-500 focus:outline-none"
-                      placeholder={initialFormData?.email|| "Email address"}
-                     
+                      placeholder={initialFormData?.email || "Email address"}
                       onChange={handleFormChange}
                       required
                     />
@@ -140,21 +145,25 @@ export default function Login(){
                       id="password"
                       class="block w-full px-4 py-3 mb-4 border border-2 border-transparent border-gray-200 rounded-lg focus:ring focus:ring-blue-500 focus:outline-none"
                       placeholder={initialFormData?.password || "Password"}
-                      
                       onChange={handleFormChange}
                       required
                     />
                     <div class="block">
-                      <button type="submit" class="w-full px-3 py-4 font-medium text-white bg-[#5b7bf0] rounded-lg hover:bg-[#435aaf]">
+                      <button
+                        type="submit"
+                        class="w-full px-3 py-4 font-medium text-white bg-[#5b7bf0] rounded-lg hover:bg-[#435aaf]"
+                      >
                         Log Me In
                       </button>
                     </div>
                   </form>
                   <p class="w-full mt-4 text-sm text-center text-gray-500">
                     Don't have an account?{" "}
-                    <a href="#_" class="text-blue-500 underline">
-                      Sign up here
-                    </a>
+                    <Link to="/register" class="no-underline">
+                      <a href="#_" class="text-blue-500 underline">
+                        Sign up here
+                      </a>
+                    </Link>
                   </p>
                 </div>
               </div>

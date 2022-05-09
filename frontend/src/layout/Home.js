@@ -34,7 +34,7 @@ export default function Home() {
     
 
     function copyEmail() {
-        let copyText = "sobeckjames@gmail.com"; //INSERT THEIR EMAIL HERE
+        let copyText = "globalunderstandingllc@gmail.com"; 
         navigator.clipboard.writeText(copyText);
         alert("Copied the text: " + copyText);
       }
@@ -42,8 +42,8 @@ export default function Home() {
       function sendEmail() {
         //this.contact_number.value = Math.random() * 100000 | 0;
         let holder = document.getElementById("contactForm");
-        init("user_hUicicLJTLab6LBthvcQv"); //THERE EMAIL ID
-       sendForm('default_service', 'template_kxpv2oi', holder, ).then(function() {
+        init("ydOt5blEAeIoEFqwb"); //THEIR EMAIL ID
+       sendForm('default_service', 'template_4hpki4n', holder, ).then(function() {
             console.log('SUCCESS!');
         }, function(error) {
             console.log('FAILED...', error);
@@ -111,25 +111,31 @@ export default function Home() {
           </nav>
 
           <div class="relative z-10 inline-flex items-center space-x-3 md:ml-5 lg:justify-end">
-          <Link to="/login" class="no-underline">
-            <a
-              href="#"
-              class="inline-flex items-center justify-center px-4 py-2 text-base font-medium leading-6 text-gray-600 whitespace-no-wrap bg-white border border-gray-200 rounded-md shadow-sm hover:bg-gray-50 focus:outline-none focus:shadow-none no-underline"
-            >
-              Sign in
-            </a> </Link>
-            <span class="inline-flex rounded-md shadow-sm">
+            <Link to="/login" class="no-underline">
               <a
                 href="#"
-                class="inline-flex items-center justify-center px-4 py-2 text-base font-medium leading-6 text-white whitespace-no-wrap bg-[#5b7bf0] border-[#5b7bf0] rounded-md shadow-sm hover:bg-[#435aaf] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#5b7bf0] no-underline"
+                class="inline-flex items-center justify-center px-4 py-2 text-base font-medium leading-6 text-gray-600 whitespace-no-wrap bg-white border border-gray-200 rounded-md shadow-sm hover:bg-gray-50 focus:outline-none focus:shadow-none no-underline"
               >
-                Sign up
-              </a>
+                Sign in
+              </a>{" "}
+            </Link>
+            <span class="inline-flex rounded-md shadow-sm">
+              <Link to="/register" class="no-underline">
+                <a
+                  href="#"
+                  class="inline-flex items-center justify-center px-4 py-2 text-base font-medium leading-6 text-white whitespace-no-wrap bg-[#5b7bf0] border-[#5b7bf0] rounded-md shadow-sm hover:bg-[#435aaf] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#5b7bf0] no-underline"
+                >
+                  Sign up
+                </a>
+              </Link>
             </span>
           </div>
         </div>
       </section>
-      <section class="w-full px-3 antialiased bg-gradient-to-b from-[#5b7bf0] to-[#c7e1ed] lg:px-6" id="Home">
+      <section
+        class="w-full px-3 antialiased bg-gradient-to-b from-[#5b7bf0] to-[#c7e1ed] lg:px-6"
+        id="Home"
+      >
         <div class="mx-auto max-w-7xl">
           <div class="container py-32 mx-auto text-center sm:px-4">
             <h1 class="text-4xl font-extrabold leading-10 tracking-tight text-Black sm:text-5xl sm:leading-none md:text-6xl xl:text-7xl">
@@ -151,37 +157,41 @@ export default function Home() {
                   justifyContent: "center",
                 }}
               >
-                
-                <button onClick={() => changeButton()}><a
+                <button onClick={() => changeButton()}>
+                  <a
                     href="#_"
                     class="flex items-center w-full px-6 py-2 mb-3 text-lg text-white bg-[#5b7bf0] rounded-md sm:mb-0 hover:bg-[#435aaf] sm:w-auto no-underline"
                   >
-                   
-                      {text}
-                    
-                   
-                     
-                  </a></button>
-              </div></div>
-              <div style={{display:'flex', margin:'10px', marginLeft: "auto", marginRight: "auto", justifyContent:"center"}}>
-                {demo === true && (
-                  <iframe
-                    width="1099"
-                    height="471"
-                    
-                    src="https://www.youtube.com/embed/BaBhJOYa5K8"
-                    title="YouTube video player"
-                    frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen
-                  ></iframe>
-                )}
+                    {text}
+                  </a>
+                </button>
               </div>
-            
+            </div>
+            <div
+              style={{
+                display: "flex",
+                margin: "10px",
+                marginLeft: "auto",
+                marginRight: "auto",
+                justifyContent: "center",
+              }}
+            >
+              {demo === true && (
+                <iframe
+                  width="1099"
+                  height="471"
+                  src="https://www.youtube.com/embed/BaBhJOYa5K8"
+                  title="YouTube video player"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen
+                ></iframe>
+              )}
+            </div>
           </div>
         </div>
       </section>
-      
+
       <section class="px-2 py-32 bg-white md:px-0" id="About">
         <div class="container items-center max-w-6xl px-8 mx-auto xl:px-5">
           <div class="flex flex-wrap items-center sm:-mx-3">
@@ -190,39 +200,37 @@ export default function Home() {
                 <h1 class="text-4xl font-extrabold tracking-tight text-gray-900 sm:text-5xl md:text-4xl lg:text-5xl xl:text-6xl">
                   <span class="block xl:inline">Who We Are</span>
                 </h1>
-                <p class="mx-auto text-base text-gray-500 sm:max-w-md lg:text-xl md:max-w-3xl">
+                <p class="mx-auto text-base text-gray-800 sm:max-w-md lg:text-xl md:max-w-3xl">
                   We are a group that have developed a professional development
                   program that addresses the education of law enforcement
                 </p>
                 <div class="relative flex flex-col sm:flex-row sm:space-x-4">
-                   <button onClick={() => handleClick()}><a
-                    href="#_"
-                    class="flex items-center w-full px-6 py-3 mb-3 text-lg text-white bg-[#5b7bf0] rounded-md sm:mb-0 hover:bg-[#435aaf] sm:w-auto no-underline"
-                  >
-                   
+                  <button onClick={() => handleClick()}>
+                    <a
+                      href="#_"
+                      class="flex items-center w-full px-6 py-3 mb-3 text-lg text-white bg-[#5b7bf0] rounded-md sm:mb-0 hover:bg-[#435aaf] sm:w-auto no-underline"
+                    >
                       {" "}
                       Click to read more!
-                    
-                   
-                     
-                  </a></button>
-                </div> {about === true && (
-                      <>
-                        <div class="my-16 border-b border-gray-300 lg:my-24 pr-5">
-                          <p class="text-left text-gray-500 xl:text-xl">
-                            We are a collective group of judges, attorneys, law
-                            enforcement agents, psychologists, martial artists,
-                            and community advocates who have developed, through
-                            years of research, a professional development
-                            program that specifically addresses the continuing
-                            education of law enforcement agencies and
-                            municipalities. This program addresses the five key
-                            elements of ethical and effective law enforcement,
-                            which we call The Five Principles.
-                          </p>
-                        </div>
-                      </>
-                    )}
+                    </a>
+                  </button>
+                </div>{" "}
+                {about === true && (
+                  <>
+                    <div class="my-16 border-b border-gray-300 lg:my-24 pr-5">
+                      <p class="text-left text-gray-800 xl:text-xl">
+                        We are a collective group of judges, attorneys, law
+                        enforcement agents, psychologists, martial artists, and
+                        community advocates who have developed, through years of
+                        research, a professional development program that
+                        specifically addresses the continuing education of law
+                        enforcement agencies and municipalities. This program
+                        addresses the five key elements of ethical and effective
+                        law enforcement, which we call The Five Principles.
+                      </p>
+                    </div>
+                  </>
+                )}
               </div>
             </div>
             <div class="w-full md:w-1/2">
@@ -237,26 +245,24 @@ export default function Home() {
       <section class="flex items-center justify-center py-5 text-white bg-white sm:py-16 md:py-24 lg:py-32">
         <div class="relative max-w-3xl px-10 text-center text-white auto lg:px-0">
           <div class="w-full md:flex-row text-center">
-              <h1 class="relative flex flex-col text-6xl font-extrabold text-center text-black">
-                About Us
-              </h1>
-             
-            
+            <h1 class="relative flex flex-col text-6xl font-extrabold text-center text-black">
+              About Us
+            </h1>
           </div>
 
           <div class="my-16 border-b border-gray-300 lg:my-24"></div>
 
-          <h2 class="text-left text-gray-500 xl:text-xl block ">
+          <p class="text-left mx-auto text-base text-gray-800 sm:max-w-md lg:text-xl md:max-w-3xl">
             Global Understanding LLC is centered on key solutions for the
             world’s problems with global initiatives to enhance mankind. We seek
             experts in their field to assist in developing solutions ranging
             from everyday problems to global pandemics. We take a structured
             approach not to tear down but to enhance and improve people, groups,
             communities, countries, and humanity as a whole.
-          </h2>
+          </p>
           <div class="my-16 border-b border-gray-300 lg:my-24"></div>
 
-          <h2 class="text-left text-gray-500 xl:text-xl">
+          <p class="text-left mx-auto text-base text-gray-800 sm:max-w-md lg:text-xl md:max-w-3xl">
             We are a leading collective group of experts and professionals in
             our fields including former federal law enforcement, licensed
             clinical psychologists, attorneys at law, university professors, and
@@ -268,51 +274,56 @@ export default function Home() {
             police departments nationwide. We seek to improve the public image
             of law enforcement and provide valuable feedback to police training
             personnel in the following areas.
-          </h2>
+          </p>
         </div>
       </section>
 
-      
-<section class="w-full py-16 overflow-hidden bg-white relative">
-    <div class="max-w-6xl relative mx-auto flex sm:px-0 px-10 flex-col items-start sm:items-center justify-center">
-    <img src={logo} alt="logo" style={{ height: "150px" }} />
-        <h2 class="text-gray-900 text-3xl font-bold font-serif pt-4">Our Mission</h2>
-        <p class="text-gray-600 text-lg text-left sm:text-center max-w-lg mt-5">Our mission is to collectively assist law enforcement officials
-              while gaining the support of the community. This will be done by
-              introducing our professional development training module created
-              specifically to meet the needs of today’s society. Our goal is to
-              provide law enforcement with necessary education to reinforce and
-              enhance training facilitated in the police academy or other
-              programs.</p> <button onClick={() => handleMission()}>
-        <a href="#_" class="flex items-center w-full mt-3 px-6 py-3 mb-3 text-lg text-white bg-[#5b7bf0] rounded-md sm:mb-0 hover:bg-[#435aaf] sm:w-auto no-underline">
-            <span>{learn}</span> 
-            
-        </a></button>
-        {mission === true && (
-          <>
+      <section class="w-full py-16 overflow-hidden bg-white relative">
+        <div class="max-w-6xl relative mx-auto flex sm:px-0 px-10 flex-col items-start sm:items-center justify-center">
+          <img src={logo} alt="logo" style={{ height: "150px" }} />
+          <h2 class="text-gray-900 text-3xl font-bold font-serif pt-4">
+            Our Mission
+          </h2>
+          <p class="text-center mx-auto text-base text-gray-800 sm:max-w-md lg:text-xl md:max-w-3xl">
+            Our mission is to collectively assist law enforcement officials
+            while gaining the support of the community. This will be done by
+            introducing our professional development training module created
+            specifically to meet the needs of today’s society. Our goal is to
+            provide law enforcement with necessary education to reinforce and
+            enhance training facilitated in the police academy or other
+            programs.
+          </p>{" "}
           <div class="my-10 border-b border-gray-300  pr-5">
-            <p class="text-gray-600 text-lg text-left sm:text-center max-w-lg mt-5">
-            Through a collaborative effort of leading experts including former
-              federal law enforcement, licensed clinical psychologists,
-              attorneys at law, university professors, and martial arts experts
-              we will provide this professional development training to reduce
-              the number of wrongful deaths, lawsuits, unarmed shootings, and
-              cases of police misconduct to improve law enforcement
-              effectiveness and community relations while upholding the mission
-              of law enforcement; to protect and serve our community. Our staff
-              will teach law enforcement The Five Principles, a more informed
-              comprehensive professional development training system
-              specifically created for the challenges of law enforcement today.
-            </p>
-          </div>
-        </>
-        )}
-       
-    </div>
-</section>
-
-
-      <section class="relative py-10 bg-white min-w-screen animation-fade animation-delay" id="Program">
+                <p class="text-center mx-auto text-base text-gray-800 sm:max-w-md lg:text-xl md:max-w-3xl">
+                  Through a collaborative effort of leading experts including
+                  former federal law enforcement, licensed clinical
+                  psychologists, attorneys at law, university professors, and
+                  martial arts experts we will provide this professional
+                  development training to reduce the number of wrongful deaths,
+                  lawsuits, unarmed shootings, and cases of police misconduct to
+                  improve law enforcement effectiveness and community relations
+                  while upholding the mission of law enforcement; to protect and
+                  serve our community. Our staff will teach law enforcement The
+                  Five Principles, a more informed comprehensive professional
+                  development training system specifically created for the
+                  challenges of law enforcement today.
+                </p>
+              </div>
+          <button onClick={() => handleMission()}>
+            <a
+            id="Program"
+              href="#_"
+              class="flex items-center w-full mt-3 px-6 py-3 mb-3 text-lg text-white bg-[#5b7bf0] rounded-md sm:mb-0 hover:bg-[#435aaf] sm:w-auto no-underline"
+            >
+              <span>{learn}</span>
+            </a>
+          </button>
+          {mission === true && (
+            <>
+              <section
+        class="relative py-10 bg-white min-w-screen animation-fade animation-delay"
+        
+      >
         <div class="container px-0 px-8 mx-auto sm:px-12 xl:px-5">
           <h3 class="mt-1 text-2xl font-bold text-left text-gray-800 sm:mx-6 sm:text-3xl md:text-4xl mb-6 lg:text-5xl sm:text-center sm:mx-0">
             The Five Principles
@@ -322,7 +333,7 @@ export default function Home() {
               Psychology of Law Enforcement
             </h3>
             <div class="my-4 border-b border-gray-300  pr-5"></div>
-            <p class="mt-2 text-base text-gray-600 sm:text-lg md:text-normal">
+            <p class="mt-2 text-base text-gray-800 sm:text-lg md:text-normal">
               We will have a licensed psychologist assist law enforcement
               officers in understanding the psychological effects of law
               enforcement and their discretionary use of force in an
@@ -334,7 +345,7 @@ export default function Home() {
               Gender Equality, Cultural Proficiency, and Social Awareness
             </h3>
             <div class="my-4 border-b border-gray-300  pr-5"></div>
-            <p class="mt-2 text-base text-gray-600 sm:text-lg md:text-normal">
+            <p class="mt-2 text-base text-gray-800 sm:text-lg md:text-normal">
               We have experts who will teach law enforcement officers how to
               better handle enforcing the law while understanding the growing
               changes in our community and social perceptions; teaching our
@@ -350,7 +361,7 @@ export default function Home() {
               Non-Evasive Restraint Techniques and Levels of Force
             </h3>
             <div class="my-4 border-b border-gray-300  pr-5"></div>
-            <p class="mt-2 text-base text-gray-600 sm:text-lg md:text-normal">
+            <p class="mt-2 text-base text-gray-800 sm:text-lg md:text-normal">
               Our certified instructors will teach law enforcement personnel
               non-lethal restraint techniques provided as an alternative to
               using some of their many weapons (i.e. gun, baton, Taser, mace).
@@ -367,7 +378,7 @@ export default function Home() {
               The Law and Ethical Decision Making
             </h3>
             <div class="my-4 border-b border-gray-300  pr-5"></div>
-            <p class="mt-2 text-base text-gray-600 sm:text-lg md:text-normal">
+            <p class="mt-2 text-base text-gray-800 sm:text-lg md:text-normal">
               While understanding the complexities of law enforcement, experts
               and community officials believe law enforcement officers should be
               trained in how to better serve their community while maintaining
@@ -382,13 +393,13 @@ export default function Home() {
               and correct their own cultural biases.
             </p>
           </div>
-          
+
           <div class="w-full px-6 py-6 mx-auto mt-10 bg-white border border-gray-200 rounded-lg sm:px-8 md:px-12 sm:py-8 sm:shadow lg:w-5/6 xl:w-2/3">
             <h3 class="text-lg font-bold text-[#5b7bf0] sm:text-xl md:text-2xl">
               Principles of Efficacy
             </h3>
             <div class="my-4 border-b border-gray-300  pr-5"></div>
-            <p class="mt-2 text-base text-gray-600 sm:text-lg md:text-normal">
+            <p class="mt-2 text-base text-gray-800 sm:text-lg md:text-normal">
               To reach rigorous standards of efficiency we provide a supportive
               foundation for the challenging work of law enforcement. The Five
               Principles promotes the idea that effective effort drives
@@ -398,6 +409,12 @@ export default function Home() {
           </div>
         </div>
       </section>
+            </>
+          )}
+        </div>
+      </section>
+
+     
       <div className="p-10 ">
         <div id="Contact" class="max-w-5xl mx-auto ">
           <div class="flex flex-col items-center md:flex-row">

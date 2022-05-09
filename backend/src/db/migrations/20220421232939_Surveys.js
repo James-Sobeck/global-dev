@@ -9,7 +9,6 @@ exports.up = function(knex) {
       table.string("survey_name");
       table.text("survey_text");
       table.text("survey_answer");
-      
   })
 };
 

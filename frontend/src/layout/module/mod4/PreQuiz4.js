@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import react, { useState } from "react";
-import logo from "../../img/GlobalUnderstandingLogo.37b38633.png";
-export default function PreQuiz() {
+import logo from "../../../img/GlobalUnderstandingLogo.37b38633.png";
+export default function PreQuiz4() {
   
   const [start, setStart] = useState(false);
   function changeButton() {
@@ -9,7 +9,7 @@ export default function PreQuiz() {
   }
   return (
     <>
-      <section class="relative w-full px-8 text-gray-700 bg-white body-font">
+    <section class="relative w-full px-8 text-gray-700 bg-white body-font">
         <div class="container flex flex-col flex-wrap items-center justify-between py-5 mx-auto md:flex-row max-w-7xl">
           <a
             href="http://localhost:3000/"
@@ -18,43 +18,6 @@ export default function PreQuiz() {
             <img src={logo} style={{ height: "35px", paddingRight: "10px" }} />
             The Five Principles
           </a>
-
-          <nav class="top-0 left-0 z-0 flex items-center justify-center w-full h-full py-5 -ml-0 space-x-5 text-base md:-ml-5 md:py-0 md:absolute">
-            <a
-              href="#_"
-              class="relative font-medium leading-6 text-gray-600 transition duration-150 ease-out hover:text-gray-900"
-            ></a>
-            <a
-              href="http://localhost:3000/#About"
-              class="relative font-medium leading-6 text-gray-600 transition duration-150 ease-out hover:text-gray-900 no-underline"
-              x-data="{ hover: false }"
-              mouseenter="hover = true"
-              mouseleave="hover = false"
-            >
-              <span class="block">About</span>
-              <span class="absolute bottom-0 left-0 inline-block w-full h-0.5 -mb-1 overflow-hidden"></span>
-            </a>
-            <a
-              href="http://localhost:3000/#Program"
-              class="relative font-medium leading-6 text-gray-600 transition duration-150 ease-out hover:text-gray-900 no-underline"
-              x-data="{ hover: false }"
-              mouseenter="hover = true"
-              mouseleave="hover = false"
-            >
-              <span class="block">Program</span>
-              <span class="absolute bottom-0 left-0 inline-block w-full h-0.5 -mb-1 overflow-hidden"></span>
-            </a>
-            <a
-              href="http://localhost:3000/#Contact"
-              class="relative font-medium leading-6 text-gray-600 transition duration-150 ease-out hover:text-gray-900 no-underline"
-              x-data="{ hover: false }"
-              mouseenter="hover = true"
-              mouseleave="hover = false"
-            >
-              <span class="block">Contact</span>
-              <span class="absolute bottom-0 left-0 inline-block w-full h-0.5 -mb-1 overflow-hidden"></span>
-            </a>
-          </nav>
 
           <div class="relative z-10 inline-flex items-center space-x-3 md:ml-5 lg:justify-end">
             <span class="inline-flex rounded-md shadow-sm">
@@ -91,19 +54,16 @@ export default function PreQuiz() {
               <div class="my-10 border-b border-gray-300 justify-center pr-5">
                 <div class="relative z-10 h-auto p-8 py-10 overflow-hidden bg-white border-b-2 border-gray-300 rounded-lg shadow-2xl px-7">
                   <h3 class="mb-6 text-2xl font-medium text-center">
-                    Module 1 Pre-Quiz
+                    Module 4 Pre-Quiz
                   </h3>
                   <div class="my-12 border-b border-gray-300 lg:my-12"></div>
                   <form id="preQuiz">
                     <legend>
-                      1. The United States Constitution provides that persons
-                      shall not be subjected to unreasonable searches and/or
-                      seizures. According to the preceding sentence...
+                      1. How do you use your own experiences (both work and personal) to guide your decision-making when working with civilians?
                     </legend>
                     <div >
                     <label class="text-center text-gray-800 xl:text-xl pt-4">
-                      The police may not conduct a search of a person`s home
-                      without a valid Search Warrant.
+                    Are you being fair?
                     </label>{" "}
                     <input
                       type="checkbox"
@@ -112,8 +72,7 @@ export default function PreQuiz() {
                       value="A"
                     ></input>
                     <label class="text-center text-gray-800 xl:text-xl">
-                      The police may not seize a person without establishing
-                      probable cause.
+                    Are you moral?
                     </label>{" "}
                     <input
                       type="checkbox"
@@ -122,8 +81,7 @@ export default function PreQuiz() {
                       value="B"
                     />
                     <label class="text-center text-gray-800 xl:text-xl">
-                      Non-citizens are not protected by the provisions of the
-                      United States Constitution.
+                    Are you following the law?
                     </label>{" "}
                     <input
                       type="checkbox"
@@ -131,10 +89,43 @@ export default function PreQuiz() {
                       class="block w-full px-4 py-3 mb-4 border-2 border-gray-200 rounded-lg focus:ring focus:ring-blue-500 focus:outline-none"
                       value="C"
                     />
+                  
+                    </div>
+                    <div class="my-12 border-b border-gray-300 lg:my-12"></div>
+                    <legend>
+                      2. What techniques do you use to guide your decision making?
+                    </legend>
+                    <div >
+                    <label class="text-center text-gray-800 xl:text-xl pt-4">
+                    Is it based on experience?
+                    </label>{" "}
+                    <input
+                      type="checkbox"
+                      name="q1"
+                      class="block w-full px-4 py-3 mb-4 border-2 border-gray-200 rounded-lg focus:ring focus:ring-blue-500 focus:outline-none"
+                      value="A"
+                    ></input>
                     <label class="text-center text-gray-800 xl:text-xl">
-                      Certain kinds of searches are forbidden by the United
-                      States Constitution.
-                    </label>
+                    Is it based on things you learn in academy?
+                    </label>{" "}
+                    <input
+                      type="checkbox"
+                      name="q1"
+                      class="block w-full px-4 py-3 mb-4 border-2 border-gray-200 rounded-lg focus:ring focus:ring-blue-500 focus:outline-none"
+                      value="B"
+                    />
+                    <label class="text-center text-gray-800 xl:text-xl">
+                    Is it based on training from your supervisor?
+                    </label>{" "}
+                    <input
+                      type="checkbox"
+                      name="q1"
+                      class="block w-full px-4 py-3 mb-4 border-2 border-gray-200 rounded-lg focus:ring focus:ring-blue-500 focus:outline-none"
+                      value="C"
+                    />
+                  <label class="text-center text-gray-800 xl:text-xl">
+                  All of the above
+                    </label>{" "}
                     <input
                       type="checkbox"
                       name="q1"
@@ -142,59 +133,100 @@ export default function PreQuiz() {
                       value="D"
                     />
                     </div>
+                     <div class="my-12 border-b border-gray-300 lg:my-12"></div>
+                    <legend>
+                      3. What is your view of the community in which you are working?
+                    </legend>
+                    <div >
+                    <label class="text-center text-gray-800 xl:text-xl pt-4">Positive</label>{" "}
+                    <input
+                      type="checkbox"
+                      name="q3"
+                      class="block w-full px-4 py-3 mb-4 border-2 border-gray-200 rounded-lg focus:ring focus:ring-blue-500 focus:outline-none"
+                      value="Positive"
+                    />
+                    <label class="text-center text-gray-800 xl:text-xl">Negative</label>
+                    <input
+                      type="checkbox"
+                      name="q3"
+                      class="block w-full px-4 py-3 mb-4 border-2 border-gray-200 rounded-lg focus:ring focus:ring-blue-500 focus:outline-none"
+                      value="Negative"
+                    />
+                    <label class="text-center text-gray-800 xl:text-xl">Indifferent</label>
+                    <input
+                      type="checkbox"
+                      name="q3"
+                      class="block w-full px-4 py-3 mb-4 border-2 border-gray-200 rounded-lg focus:ring focus:ring-blue-500 focus:outline-none"
+                      value="Indifferent"
+                    /></div>
+                     <div class="my-12 border-b border-gray-300 lg:my-12"></div>
+                    <legend>
+                      4. What are you views on the 4th amendment? Definition of 4th amendment: The right of the people to be secure in their persons, houses, papers, and effects, against unreasonable searches and seizures, shall not be violated, and no Warrants shall issue, but upon probable cause, supported by Oath or affirmation, and particularly describing the place to be searched, and the persons or things to be seized.
+                    </legend>
+                    <div >
+                    <label class="text-center text-gray-800 xl:text-xl pt-4">Do you like it?</label>{" "}
+                    <input
+                      type="checkbox"
+                      name="q4"
+                      class="block w-full px-4 py-3 mb-4 border-2 border-gray-200 rounded-lg focus:ring focus:ring-blue-500 focus:outline-none"
+                      value="A"
+                    />
+                    <label class="text-center text-gray-800 xl:text-xl">Do you Not like it?</label>{" "}
+                    <input
+                      type="checkbox"
+                      name="q4"
+                      class="block w-full px-4 py-3 mb-4 border-2 border-gray-200 rounded-lg focus:ring focus:ring-blue-500 focus:outline-none"
+                      value="B"
+                    />
+                    <label class="text-center text-gray-800 xl:text-xl">Do you like it and support it?</label>{" "}
+                    <input
+                      type="checkbox"
+                      name="q4"
+                      class="block w-full px-4 py-3 mb-4 border-2 border-gray-200 rounded-lg focus:ring focus:ring-blue-500 focus:outline-none"
+                      value="C"
+                    />
+                    <label class="text-center text-gray-800 xl:text-xl">Do you Not like it and support it?</label>{" "}
+                    <input
+                      type="checkbox"
+                      name="q4"
+                      class="block w-full px-4 py-3 mb-4 border-2 border-gray-200 rounded-lg focus:ring focus:ring-blue-500 focus:outline-none"
+                      value="D"
+                    /></div>
                     <div class="my-12 border-b border-gray-300 lg:my-12"></div>
                     <legend>
-                      2. As an officer what characteristics do you believe are
-                      essential to being law enforcement?
-                    </legend>
-                    <textarea
-                      type="text"
-                      name="Answer"
-                      class="block w-full px-4 py-3 mb-4 border-2 border-transparent border-gray-200 rounded-lg focus:ring focus:ring-blue-500 focus:outline-none"
-                      placeholder="Answer"
-                    />
-                     <div class="my-12 border-b border-gray-300 lg:my-12"></div>
-                    <legend>
-                      3. Character refers to a person\'s "outer" makeup while
-                      personality refers to their "inner" makeup?
+                      5. Police must apply the law...
                     </legend>
                     <div >
-                    <label class="text-center text-gray-800 xl:text-xl pt-4">True</label>{" "}
-                    <input
-                      type="checkbox"
-                      name="q3"
-                      class="block w-full px-4 py-3 mb-4 border-2 border-gray-200 rounded-lg focus:ring focus:ring-blue-500 focus:outline-none"
-                      value="True"
-                    />
-                    <label class="text-center text-gray-800 xl:text-xl">False</label>
-                    <input
-                      type="checkbox"
-                      name="q3"
-                      class="block w-full px-4 py-3 mb-4 border-2 border-gray-200 rounded-lg focus:ring focus:ring-blue-500 focus:outline-none"
-                      value="False"
-                    /></div>
-                     <div class="my-12 border-b border-gray-300 lg:my-12"></div>
-                    <legend>
-                      4. Good ethical conduct comes primarily from what a person
-                      already has before he/she enrolls in the police academy.
-                    </legend>
-                    <div >
-                    <label class="text-center text-gray-800 xl:text-xl pt-4">True</label>{" "}
+                    <label class="text-center text-gray-800 xl:text-xl pt-4">Fairly</label>{" "}
                     <input
                       type="checkbox"
                       name="q4"
                       class="block w-full px-4 py-3 mb-4 border-2 border-gray-200 rounded-lg focus:ring focus:ring-blue-500 focus:outline-none"
-                      value="True"
+                      value="A"
                     />
-                    <label class="text-center text-gray-800 xl:text-xl">False</label>{" "}
+                    <label class="text-center text-gray-800 xl:text-xl">Evenhandedly</label>{" "}
                     <input
                       type="checkbox"
                       name="q4"
                       class="block w-full px-4 py-3 mb-4 border-2 border-gray-200 rounded-lg focus:ring focus:ring-blue-500 focus:outline-none"
-                      value="False"
+                      value="B"
+                    />
+                    <label class="text-center text-gray-800 xl:text-xl">With a view to promote justice</label>{" "}
+                    <input
+                      type="checkbox"
+                      name="q4"
+                      class="block w-full px-4 py-3 mb-4 border-2 border-gray-200 rounded-lg focus:ring focus:ring-blue-500 focus:outline-none"
+                      value="C"
+                    />
+                    <label class="text-center text-gray-800 xl:text-xl">All answers correct</label>{" "}
+                    <input
+                      type="checkbox"
+                      name="q4"
+                      class="block w-full px-4 py-3 mb-4 border-2 border-gray-200 rounded-lg focus:ring focus:ring-blue-500 focus:outline-none"
+                      value="D"
                     /></div>
                     <div class="block pt-4">
-                      <Link to="/module1_video">
+                      <Link to="/module4_video">
                       <button class="w-full px-3 py-4 font-medium text-white bg-[#5b7bf0] rounded-md sm:mb-0 hover:bg-[#435aaf]">
                         Send
                       </button></Link>

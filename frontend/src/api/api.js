@@ -32,11 +32,39 @@ async function fetchJson(url, options, onCancel) {
 
 export async function registerUser(email, password){
   const url = new URL(`${API_BASE_URL}/register`);
+  const tempUser = {
+    email: email,
+    first_name: "test",
+    last_name: "test",
+    address_1: "test",
+    address_2: "test",
+    city: "test",
+    state: "test",
+    zip: "test",
+    phone_number: "1255458040",
+    // organization_id: "1",
+    module_id_complete: "1",
+    module_id_todo: "2",
+    password: password,
+  }
   const options = {
     method: "POST",
-    headers,
-    body: JSON.stringify({ email, password}),
+    body: JSON.stringify(tempUser),
   };
   console.log(options);
   return await fetchJson(url, options, []);
+}
+
+export async function loginUser(email,password){
+  const url = new URL(`${API_BASE_URL}/login`); //login route
+  const tempUser = {
+    email,
+    password
+  }
+  const options = {
+    method: "POST",
+    headers,
+    body: JSON.stringify(tempUser),
+  }
+  return await fetchJson(url, options, [])
 }

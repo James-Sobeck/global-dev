@@ -14,13 +14,12 @@ exports.up = function (knex) {
     table.string("state");
     table.string("zip");
     table.integer("phone_number");
-    table.string("mobile_number");
-    table.integer("organization_id").unsigned();
-    table.foreign("organization_id").references("organization_id").inTable("orgranizations");
-    table.string("hash");
-    table.string("salt");
+    // table.integer("organization_id").unsigned();
+    // table.foreign("organization_id").references("organization_id").inTable("orgranizations");
     table.integer("module_id_complete");
     table.integer("module_id_todo");
+    table.string("hash");
+    table.string("salt");
   });
 };
 

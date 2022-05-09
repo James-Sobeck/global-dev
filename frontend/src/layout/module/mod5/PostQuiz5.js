@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom";
 import react, { useState } from "react";
-import logo from "../../img/GlobalUnderstandingLogo.37b38633.png";
-export default function PreQuiz() {
+import logo from "../../../img/GlobalUnderstandingLogo.37b38633.png";
+export default function PostQuiz5() {
+  
   const [start, setStart] = useState(false);
   function changeButton() {
     setStart(!start);
@@ -17,43 +18,6 @@ export default function PreQuiz() {
             <img src={logo} style={{ height: "35px", paddingRight: "10px" }} />
             The Five Principles
           </a>
-
-          <nav class="top-0 left-0 z-0 flex items-center justify-center w-full h-full py-5 -ml-0 space-x-5 text-base md:-ml-5 md:py-0 md:absolute">
-            <a
-              href="#_"
-              class="relative font-medium leading-6 text-gray-600 transition duration-150 ease-out hover:text-gray-900"
-            ></a>
-            <a
-              href="http://localhost:3000/#About"
-              class="relative font-medium leading-6 text-gray-600 transition duration-150 ease-out hover:text-gray-900 no-underline"
-              x-data="{ hover: false }"
-              mouseenter="hover = true"
-              mouseleave="hover = false"
-            >
-              <span class="block">About</span>
-              <span class="absolute bottom-0 left-0 inline-block w-full h-0.5 -mb-1 overflow-hidden"></span>
-            </a>
-            <a
-              href="http://localhost:3000/#Program"
-              class="relative font-medium leading-6 text-gray-600 transition duration-150 ease-out hover:text-gray-900 no-underline"
-              x-data="{ hover: false }"
-              mouseenter="hover = true"
-              mouseleave="hover = false"
-            >
-              <span class="block">Program</span>
-              <span class="absolute bottom-0 left-0 inline-block w-full h-0.5 -mb-1 overflow-hidden"></span>
-            </a>
-            <a
-              href="http://localhost:3000/#Contact"
-              class="relative font-medium leading-6 text-gray-600 transition duration-150 ease-out hover:text-gray-900 no-underline"
-              x-data="{ hover: false }"
-              mouseenter="hover = true"
-              mouseleave="hover = false"
-            >
-              <span class="block">Contact</span>
-              <span class="absolute bottom-0 left-0 inline-block w-full h-0.5 -mb-1 overflow-hidden"></span>
-            </a>
-          </nav>
 
           <div class="relative z-10 inline-flex items-center space-x-3 md:ml-5 lg:justify-end">
             <span class="inline-flex rounded-md shadow-sm">
@@ -90,19 +54,16 @@ export default function PreQuiz() {
               <div class="my-10 border-b border-gray-300 justify-center pr-5">
                 <div class="relative z-10 h-auto p-8 py-10 overflow-hidden bg-white border-b-2 border-gray-300 rounded-lg shadow-2xl px-7">
                   <h3 class="mb-6 text-2xl font-medium text-center">
-                    Module 1 Post-Quiz
+                    Module 5 Post-Quiz
                   </h3>
                   <div class="my-12 border-b border-gray-300 lg:my-12"></div>
                   <form id="preQuiz">
                     <legend>
-                      1. The United States Constitution provides that persons
-                      shall not be subjected to unreasonable searches and/or
-                      seizures. According to the preceding sentence...
+                      1.Police work is all about making __________ about other people’s lives.
                     </legend>
                     <div >
                     <label class="text-center text-gray-800 xl:text-xl pt-4">
-                      The police may not conduct a search of a person`s home
-                      without a valid Search Warrant.
+                    Jokes
                     </label>{" "}
                     <input
                       type="checkbox"
@@ -111,8 +72,7 @@ export default function PreQuiz() {
                       value="A"
                     ></input>
                     <label class="text-center text-gray-800 xl:text-xl">
-                      The police may not seize a person without establishing
-                      probable cause.
+                    Sense
                     </label>{" "}
                     <input
                       type="checkbox"
@@ -121,8 +81,7 @@ export default function PreQuiz() {
                       value="B"
                     />
                     <label class="text-center text-gray-800 xl:text-xl">
-                      Non-citizens are not protected by the provisions of the
-                      United States Constitution.
+                    Critical decisions
                     </label>{" "}
                     <input
                       type="checkbox"
@@ -131,8 +90,7 @@ export default function PreQuiz() {
                       value="C"
                     />
                     <label class="text-center text-gray-800 xl:text-xl">
-                      Certain kinds of searches are forbidden by the United
-                      States Constitution.
+                    Easy choices
                     </label>
                     <input
                       type="checkbox"
@@ -143,19 +101,49 @@ export default function PreQuiz() {
                     </div>
                     <div class="my-12 border-b border-gray-300 lg:my-12"></div>
                     <legend>
-                      2. As an officer what characteristics do you believe are
-                      essential to being law enforcement?
+                      2. The essential element in police professionalism is?
                     </legend>
-                    <textarea
-                      type="text"
-                      name="Answer"
-                      class="block w-full px-4 py-3 mb-4 border-2 border-transparent border-gray-200 rounded-lg focus:ring focus:ring-blue-500 focus:outline-none"
-                      placeholder="Answer"
+                    <div >
+                    <label class="text-center text-gray-800 xl:text-xl pt-4">
+                    Good character
+                    </label>{" "}
+                    <input
+                      type="checkbox"
+                      name="q1"
+                      class="block w-full px-4 py-3 mb-4 border-2 border-gray-200 rounded-lg focus:ring focus:ring-blue-500 focus:outline-none"
+                      value="A"
+                    ></input>
+                    <label class="text-center text-gray-800 xl:text-xl">
+                    Compassion
+                    </label>{" "}
+                    <input
+                      type="checkbox"
+                      name="q1"
+                      class="block w-full px-4 py-3 mb-4 border-2 border-gray-200 rounded-lg focus:ring focus:ring-blue-500 focus:outline-none"
+                      value="B"
                     />
+                    <label class="text-center text-gray-800 xl:text-xl">
+                    Willingness to learn
+                    </label>{" "}
+                    <input
+                      type="checkbox"
+                      name="q1"
+                      class="block w-full px-4 py-3 mb-4 border-2 border-gray-200 rounded-lg focus:ring focus:ring-blue-500 focus:outline-none"
+                      value="C"
+                    />
+                    <label class="text-center text-gray-800 xl:text-xl">
+                    Tolerance
+                    </label>
+                    <input
+                      type="checkbox"
+                      name="q1"
+                      class="block w-full px-4 py-3 mb-4 border-2 border-gray-200 rounded-lg focus:ring focus:ring-blue-500 focus:outline-none"
+                      value="D"
+                    />
+                    </div>
                      <div class="my-12 border-b border-gray-300 lg:my-12"></div>
                     <legend>
-                      3. Character refers to a person\'s "outer" makeup while
-                      personality refers to their "inner" makeup?
+                      3. The application of the law must be done fairly and in an impartial manner. This statement implies that officers must not care about people.
                     </legend>
                     <div >
                     <label class="text-center text-gray-800 xl:text-xl pt-4">True</label>{" "}
@@ -174,26 +162,17 @@ export default function PreQuiz() {
                     /></div>
                      <div class="my-12 border-b border-gray-300 lg:my-12"></div>
                     <legend>
-                      4. Good ethical conduct comes primarily from what a person
-                      already has before he/she enrolls in the police academy.
+                      4. Why is police ethics important?
                     </legend>
-                    <div >
-                    <label class="text-center text-gray-800 xl:text-xl pt-4">True</label>{" "}
-                    <input
-                      type="checkbox"
-                      name="q4"
-                      class="block w-full px-4 py-3 mb-4 border-2 border-gray-200 rounded-lg focus:ring focus:ring-blue-500 focus:outline-none"
-                      value="True"
+                    <textarea
+                      type="text"
+                      name="Answer"
+                      class="block w-full px-4 py-3 mb-4 border-2 border-transparent border-gray-200 rounded-lg focus:ring focus:ring-blue-500 focus:outline-none"
+                      placeholder="Answer"
                     />
-                    <label class="text-center text-gray-800 xl:text-xl">False</label>{" "}
-                    <input
-                      type="checkbox"
-                      name="q4"
-                      class="block w-full px-4 py-3 mb-4 border-2 border-gray-200 rounded-lg focus:ring focus:ring-blue-500 focus:outline-none"
-                      value="False"
-                    /></div>
+                     
                     <div class="block pt-4">
-                      <Link to="/module1">
+                      <Link to="/modules">
                       <button class="w-full px-3 py-4 font-medium text-white bg-[#5b7bf0] rounded-md sm:mb-0 hover:bg-[#435aaf]">
                         Send
                       </button></Link>

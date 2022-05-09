@@ -58,9 +58,9 @@ import { Component, PropTypes } from 'react'
         onPlayerStateChange = event =>{
             //const history = useHistory();
             if(event.data ===0){
-              //  alert('done');
+               // alert('done');
                 //window.history.go("/module1_post");
-                window.location.assign("/module1_post")
+                window.location.assign("/module5_post")
                 //window.console.error("You made a mistake");
             }
         }

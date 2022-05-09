@@ -1,14 +1,14 @@
 import { Link } from "react-router-dom";
 import react, { useState } from "react";
-import logo from "../../img/GlobalUnderstandingLogo.37b38633.png";
-export default function PreQuiz() {
+import logo from "../../../img/GlobalUnderstandingLogo.37b38633.png";
+export default function PostQuiz1() {
   const [start, setStart] = useState(false);
   function changeButton() {
     setStart(!start);
   }
   return (
     <>
-      <section class="relative w-full px-8 text-gray-700 bg-white body-font">
+     <section class="relative w-full px-8 text-gray-700 bg-white body-font">
         <div class="container flex flex-col flex-wrap items-center justify-between py-5 mx-auto md:flex-row max-w-7xl">
           <a
             href="http://localhost:3000/"
@@ -17,43 +17,6 @@ export default function PreQuiz() {
             <img src={logo} style={{ height: "35px", paddingRight: "10px" }} />
             The Five Principles
           </a>
-
-          <nav class="top-0 left-0 z-0 flex items-center justify-center w-full h-full py-5 -ml-0 space-x-5 text-base md:-ml-5 md:py-0 md:absolute">
-            <a
-              href="#_"
-              class="relative font-medium leading-6 text-gray-600 transition duration-150 ease-out hover:text-gray-900"
-            ></a>
-            <a
-              href="http://localhost:3000/#About"
-              class="relative font-medium leading-6 text-gray-600 transition duration-150 ease-out hover:text-gray-900 no-underline"
-              x-data="{ hover: false }"
-              mouseenter="hover = true"
-              mouseleave="hover = false"
-            >
-              <span class="block">About</span>
-              <span class="absolute bottom-0 left-0 inline-block w-full h-0.5 -mb-1 overflow-hidden"></span>
-            </a>
-            <a
-              href="http://localhost:3000/#Program"
-              class="relative font-medium leading-6 text-gray-600 transition duration-150 ease-out hover:text-gray-900 no-underline"
-              x-data="{ hover: false }"
-              mouseenter="hover = true"
-              mouseleave="hover = false"
-            >
-              <span class="block">Program</span>
-              <span class="absolute bottom-0 left-0 inline-block w-full h-0.5 -mb-1 overflow-hidden"></span>
-            </a>
-            <a
-              href="http://localhost:3000/#Contact"
-              class="relative font-medium leading-6 text-gray-600 transition duration-150 ease-out hover:text-gray-900 no-underline"
-              x-data="{ hover: false }"
-              mouseenter="hover = true"
-              mouseleave="hover = false"
-            >
-              <span class="block">Contact</span>
-              <span class="absolute bottom-0 left-0 inline-block w-full h-0.5 -mb-1 overflow-hidden"></span>
-            </a>
-          </nav>
 
           <div class="relative z-10 inline-flex items-center space-x-3 md:ml-5 lg:justify-end">
             <span class="inline-flex rounded-md shadow-sm">
@@ -193,7 +156,7 @@ export default function PreQuiz() {
                       value="False"
                     /></div>
                     <div class="block pt-4">
-                      <Link to="/module1">
+                      <Link to="/modules">
                       <button class="w-full px-3 py-4 font-medium text-white bg-[#5b7bf0] rounded-md sm:mb-0 hover:bg-[#435aaf]">
                         Send
                       </button></Link>

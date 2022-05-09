@@ -1,8 +1,51 @@
 import Button from "react-bootstrap/esm/Button"
 import logo from "../../img/GlobalUnderstandingLogo.37b38633.png";
 import { Link } from "react-router-dom";
+import react, { useState } from "react";
 
 export default function ModMenu(){
+  let temp = [1,2,3,4,5];
+  let numComp = 0;
+  let titles = ["Psychology of Law Enforcement", "Gender Equality, Cultural Proficiency, and Social Awareness", "Non-Evasive Restraint Techniques and Levels of Force", "The Law and Ethical Decision Making", "Principles of Efficacy"];
+  let links = ["/module1_pre", "/module2_pre", "/module3_pre", "/module4_pre", "/module5_pre"];
+  let imgSRC = ["https://images.unsplash.com/photo-1589994965851-a8f479c573a9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80", "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80","https://images.unsplash.com/photo-1603644448048-28a7e5122f0a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80", "https://images.unsplash.com/photo-1524633712235-22da046738b4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80", "https://images.unsplash.com/photo-1589307904488-7d60ff29c975?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=700&q=80"]
+  function listMod(modArr){
+    //eventually will take in a user and display their personal completion rate
+    //let modArr = [0,1,2,3,4];
+    const map = temp.map((module) =>{
+      //for each module
+      return(
+        
+        <div class="w-full border border-gray-200 rounded-lg shadow-sm" key={module}>
+                <div class="flex flex-col items-center justify-center p-10 relative h-64">
+                  <img
+                    class="w-32 h-32 mb-6 rounded-full"
+                    src={imgSRC[module-1]}
+                  />
+                  
+                </div>
+                <div class="h-32 text-center">
+                  <h2 class="text-lg font-medium">Module {module}</h2>
+                  <p class="font-medium text-blue-500">{titles[module-1]}</p>
+                </div>
+                <div class="flex border-t border-gray-200 divide-x divide-gray-200 justify-center my-auto h-32">
+                  <Link to= {links[module-1]} >
+                  <button>
+                    <a
+                      class="flex items-center w-full px-6 py-3 mb-3 text-lg text-white bg-[#5b7bf0] rounded-md sm:mb-0 hover:bg-[#435aaf] sm:w-auto no-underline mt-8"
+                    >
+                      Start Module {module}
+                    </a>
+                  </button></Link>
+                </div>
+              </div>
+        
+      )
+    })
+    return map;
+    
+  }
+  
     return (
       <>
         <section class="relative w-full px-8 text-gray-700 bg-white body-font">
@@ -76,126 +119,21 @@ export default function ModMenu(){
                   Module Menu
                 </h2>
                 <p class="text-xl text-gray-500">
-                  THIS WILL BE A COMPLETION TRACKER, 1/5 .. 2/5.. 3/5
+                  {/* {temp.length} / 5 */}
+                  <progress value={1} max={temp.length}>   1 </progress>
                 </p>
               </div>
             </div>
-          <hr class="bg-[#5b7bf0]"></hr>
-            <div class="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-3">
-              <div class="w-full border border-gray-200 rounded-lg shadow-sm">
-                <div class="flex flex-col items-center justify-center p-10">
-                  <img
-                    class="w-32 h-32 mb-6 rounded-full"
-                    src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
-                  />
-                  <h2 class="text-lg font-medium">Module 1</h2>
-                  <p class="font-medium text-blue-500">Psychology of Law Enforcement</p>
-                </div>
-
-                <div class="flex border-t border-gray-200 divide-x divide-gray-200 justify-center my-auto">
-                  <Link to="/module1_pre">
-                  <button>
-                    <a
-                      href="#_"
-                      class="flex items-center w-full px-6 py-3 mb-3 text-lg text-white bg-[#5b7bf0] rounded-md sm:mb-0 hover:bg-[#435aaf] sm:w-auto no-underline mt-8"
-                    >
-                      Start Module 1
-                    </a>
-                  </button></Link>
-                </div>
-              </div>
-
-              <div class="w-full border border-gray-200 rounded-lg shadow-sm">
-                <div class="flex flex-col items-center justify-center p-10">
-                  <img
-                    class="w-32 h-32 mb-6 rounded-full"
-                    src="https://images.unsplash.com/photo-1593444285830-996c36463fe5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
-                  />
-                  <h2 class="text-lg font-medium">Module 2</h2>
-                  <p class="font-medium text-blue-500">Gender Equality, Cultural Proficiency, and Social Awareness</p>
-                </div>
-
-                <div class="flex border-t border-gray-200 divide-x divide-gray-200 justify-center my-auto">
-                  <button>
-                    <a
-                      href="#_"
-                      class="flex items-center w-full px-6 py-3 mb-3 text-lg text-white bg-[#5b7bf0] rounded-md sm:mb-0 hover:bg-[#435aaf] sm:w-auto no-underline mt-8"
-                    >
-                      Start Module 2
-                    </a>
-                  </button>
-                </div>
-              </div>
-
-              <div class="w-full border border-gray-200 rounded-lg shadow-sm">
-                <div class="flex flex-col items-center justify-center p-10">
-                  <img
-                    class="w-32 h-32 mb-6 rounded-full"
-                    src="https://images.unsplash.com/photo-1557081999-aed1863cacb1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1471&q=80"
-                  />
-                  <h2 class="text-lg font-medium">Module 3</h2>
-                  <p class="font-medium text-blue-500">Non-Evasive Restraint Techniques and Levels of Force</p>
-                </div>
-
-                <div class="flex border-t border-gray-200 divide-x divide-gray-200 justify-center my-auto">
-                  <button>
-                    <a
-                      href="#_"
-                      class="flex items-center w-full px-6 py-3 mb-3 text-lg text-white bg-[#5b7bf0] rounded-md sm:mb-0 hover:bg-[#435aaf] sm:w-auto no-underline mt-8"
-                    >
-                      Start Module 3
-                    </a>
-                  </button>
-                </div>
-              </div>
-
-              
-
-              <div class="w-full border border-gray-200 rounded-lg shadow-sm">
-                <div class="flex flex-col items-center justify-center p-10">
-                  <img
-                    class="w-32 h-32 mb-6 rounded-full"
-                    src="https://images.unsplash.com/photo-1613264520739-c2eb038e8404?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
-                  />
-                  <h2 class="text-lg font-medium">Module 4</h2>
-                  <p class="font-medium text-blue-500">The Law and Ethical Decision Making</p>
-                </div>
-
-                <div class="flex border-t border-gray-200 divide-x divide-gray-200 justify-center my-auto">
-                  <button>
-                    <a
-                      href="#_"
-                      class="flex items-center w-full px-6 py-3 mb-3 text-lg text-white bg-[#5b7bf0] rounded-md sm:mb-0 hover:bg-[#435aaf] sm:w-auto no-underline mt-8"
-                    >
-                      Start Module 4
-                    </a>
-                  </button>
-                </div>
-              </div>
-
-              <div class="w-full border border-gray-200 rounded-lg shadow-sm">
-                <div class="flex flex-col items-center justify-center p-10">
-                  <img
-                    class="w-32 h-32 mb-6 rounded-full"
-                    src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
-                  />
-                  <h2 class="text-lg font-medium">Module 5</h2>
-                  <p class="font-medium text-blue-500">Principles of Efficacy</p>
-                </div>
-
-                <div class="flex border-t border-gray-200 divide-x divide-gray-200 justify-center my-auto">
-                  <button>
-                    <a
-                      href="#_"
-                      class="flex items-center w-full px-6 py-3 mb-3 text-lg text-white bg-[#5b7bf0] rounded-md sm:mb-0 hover:bg-[#435aaf] sm:w-auto no-underline mt-8"
-                    >
-                      Start Module 5
-                    </a>
-                  </button>
-                </div>
-              </div>
             </div>
+          
+         <div class="container">
+           <hr class="bg-[#5b7bf0]"></hr>
+           
+            <div class="grid grid-cols-5 gap-10 "> 
+               {listMod(temp)}
           </div>
+         </div>
+             
         </section>
         <section class="bg-white">
         <div class="max-w-screen-xl px-4 py-12 mx-auto space-y-8 overflow-hidden sm:px-6 lg:px-8">

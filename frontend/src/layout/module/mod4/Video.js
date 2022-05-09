@@ -37,18 +37,20 @@ import { Component, PropTypes } from 'react'
             videoId: id,
             height: '720 ',
             width: '1280 ',
+            
             events: {
               //onReady: this.onPlayerReady,
               onStateChange: this.onPlayerStateChange
-            }, playerVars: {rel: 0, 
-              showinfo: 0, 
-              controls: 0, 
-              disablekb: 1,
-              modestbranding: 1,
-              cc_load_policy: 1,
-              playsinline: 1,
-            }
-            });
+            },
+          playerVars: {rel: 0, 
+            showinfo: 0, 
+            controls: 0, 
+            disablekb: 1,
+            modestbranding: 1,
+            cc_load_policy: 1,
+            playsinline: 1,
+          }
+          });
         };
       
         onPlayerReady = event => {
@@ -58,9 +60,9 @@ import { Component, PropTypes } from 'react'
         onPlayerStateChange = event =>{
             //const history = useHistory();
             if(event.data ===0){
-              //  alert('done');
+                //alert('done');
                 //window.history.go("/module1_post");
-                window.location.assign("/module1_post")
+                window.location.assign("/module4_post")
                 //window.console.error("You made a mistake");
             }
         }
@@ -69,7 +71,7 @@ import { Component, PropTypes } from 'react'
           const { id } = this.props;
           return (
             <div >
-              <div id={`youtube-player-${id}`}  />
+              <div id={`youtube-player-${id}` }  />
             </div>
           );
         };
