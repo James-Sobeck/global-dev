@@ -57,6 +57,13 @@ import { Component, PropTypes } from 'react'
        
         onPlayerStateChange = event =>{
             //const history = useHistory();
+            var rewindButton = document.getElementById("restart");
+        rewindButton.addEventListener("click", function () {
+          console.log("CLICK");
+          //var temp = this.player.getDuration();
+          // this.player.seekTo(0)
+          window.location.reload();
+        });
             if(event.data ===0){
                // alert('done');
                 //window.history.go("/module1_post");
@@ -68,9 +75,25 @@ import { Component, PropTypes } from 'react'
         render = () => {
           const { id } = this.props;
           return (
-            <div >
-              <div id={`youtube-player-${id}`}  />
+            <>
+            <div>
+              <div id={`youtube-player-${id}`} />
+              <div class="absolute bg-transparent w-screen h-48 top-[96px]" />
+              <div class="absolute bg-transparent w-screen h-12 bottom-[72px]"></div>
+            </div>{" "}
+            <div class="flex items-center  mx-auto mt-4 overflow-hidden text-center">
+              
+               <button
+              id={"restart"}
+              class=" mx-auto items-center w-full px-6 py-2 mb-3 text-lg text-white bg-[#5b7bf0] rounded-md sm:mb-0 hover:bg-[#435aaf] sm:w-auto no-underline"
+            >
+              Restart
+            </button>{" "}
+           
+           
             </div>
+            
+          </>
           );
         };
       }

@@ -41,8 +41,20 @@ export default function VideoPage() {
           </span>
           <div class="w-auto pt-4">
             <Video id="nreeKv32DO4" />
+            
           </div>
           
+          
+        </div>
+      </section>
+      <section class="bg-white">
+        <div class="max-w-screen-xl px-4 py-12 mx-auto space-y-8 overflow-hidden sm:px-6 lg:px-8">
+          <p class="mt-8 text-base leading-6 text-center text-gray-400">
+            <span class="block">
+              The Five Principles of Law Enforcement Professional Development
+            </span>
+            <span class="block">© Global Understanding LLC</span>
+          </p>
         </div>
       </section>
     </>

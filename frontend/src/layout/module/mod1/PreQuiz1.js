@@ -114,22 +114,22 @@ export default function PreQuiz1() {
                     <textarea
                       type="text"
                       name="Answer"
-                      class="block w-full px-4 py-3 mb-4 border-2 border-transparent border-gray-200 rounded-lg focus:ring focus:ring-blue-500 focus:outline-none"
+                      class="block w-full px-4 py-3 mb-4 border-2  border-gray-300 rounded-lg focus:ring focus:ring-blue-500 focus:outline-none"
                       placeholder="Answer"
                     />
                     <div class="my-12 border-b border-gray-300 lg:my-12"></div>
                     <legend>
-                      3. Character refers to a person\'s "outer" makeup while
+                      3. Character refers to a person's "outer" makeup while
                       personality refers to their "inner" makeup?
                     </legend>
-                    <div>
-                      <label class="text-center text-gray-800 xl:text-xl pt-4">
+                    <div class="flex justify-center">
+                      <label class="text-center text-gray-800 xl:text-xl">
                         True
                       </label>{" "}
                       <input
                         type="checkbox"
                         name="q3"
-                        class="block w-full px-4 py-3 mb-4 border-2 border-gray-200 rounded-lg focus:ring focus:ring-blue-500 focus:outline-none"
+                        class="block h-4 w-8 px-4 py-3 mb-4 border-2 border-gray-200 rounded-lg focus:ring focus:ring-blue-500 focus:outline-none"
                         value="True"
                       />
                       <label class="text-center text-gray-800 xl:text-xl">
@@ -138,7 +138,7 @@ export default function PreQuiz1() {
                       <input
                         type="checkbox"
                         name="q3"
-                        class="block w-full px-4 py-3 mb-4 border-2 border-gray-200 rounded-lg focus:ring focus:ring-blue-500 focus:outline-none"
+                        class="block h-4 w-8 px-4 py-3 mb-4 border-2 border-gray-200 rounded-lg focus:ring focus:ring-blue-500 focus:outline-none"
                         value="False"
                       />
                     </div>
@@ -147,14 +147,14 @@ export default function PreQuiz1() {
                       4. Good ethical conduct comes primarily from what a person
                       already has before he/she enrolls in the police academy.
                     </legend>
-                    <div>
-                      <label class="text-center text-gray-800 xl:text-xl pt-4">
+                    <div class="flex justify-center">
+                      <label class="text-center text-gray-800 xl:text-xl ">
                         True
                       </label>{" "}
                       <input
                         type="checkbox"
                         name="q4"
-                        class="block w-full px-4 py-3 mb-4 border-2 border-gray-200 rounded-lg focus:ring focus:ring-blue-500 focus:outline-none"
+                        class="block h-4 w-8 px-4 py-3 mb-4 border-2 border-gray-200 rounded-lg focus:ring focus:ring-blue-500 focus:outline-none"
                         value="True"
                       />
                       <label class="text-center text-gray-800 xl:text-xl">
@@ -163,31 +163,32 @@ export default function PreQuiz1() {
                       <input
                         type="checkbox"
                         name="q4"
-                        class="block w-full px-4 py-3 mb-4 border-2 border-gray-200 rounded-lg focus:ring focus:ring-blue-500 focus:outline-none"
+                        class="block h-4 w-8 px-4 py-3 mb-4 border-2 border-gray-200 rounded-lg focus:ring focus:ring-blue-500 focus:outline-none"
                         value="False"
                       />
                     </div>
+                    <div class="my-12 border-b border-gray-300 lg:my-12"></div>
                     <legend>
-                      4. Good ethical conduct comes primarily from what a person
-                      already has before he/she enrolls in the police academy.
+                      5. As a law enforcement officer your mental stability is the most important attribute.
                     </legend>
-                    <div>
-                      <label class="text-center text-gray-800 xl:text-xl pt-4">
+                    <div class="flex justify-center">
+                      <label class="text-center text-gray-800 xl:text-xl ">
                         True
-                      </label>{" "}
+                      </label>
                       <input
                         type="checkbox"
                         name="q4"
-                        class="block w-full px-4 py-3 mb-4 border-2 border-gray-200 rounded-lg focus:ring focus:ring-blue-500 focus:outline-none"
+                        class="block h-4 w-8 
+                        border-2 border-gray-200 rounded-lg focus:ring focus:ring-blue-500 focus:outline-none"
                         value="True"
                       />
                       <label class="text-center text-gray-800 xl:text-xl">
                         False
-                      </label>{" "}
+                      </label>
                       <input
                         type="checkbox"
                         name="q4"
-                        class="block w-full px-4 py-3 mb-4 border-2 border-gray-200 rounded-lg focus:ring focus:ring-blue-500 focus:outline-none"
+                        class="block  h-4 w-8 px-4 py-3 mb-4 border-2 border-gray-200 rounded-lg focus:ring focus:ring-blue-500 focus:outline-none"
                         value="False"
                       />
                     </div>
@@ -208,6 +209,16 @@ export default function PreQuiz1() {
           {!start && (
             <img src="https://cdn.devdojo.com/images/november2020/hero-image.png" />
           )}
+        </div>
+      </section>
+      <section class="bg-white">
+        <div class="max-w-screen-xl px-4 py-12 mx-auto space-y-8 overflow-hidden sm:px-6 lg:px-8">
+          <p class="mt-8 text-base leading-6 text-center text-gray-400">
+            <span class="block">
+              The Five Principles of Law Enforcement Professional Development
+            </span>
+            <span class="block">© Global Understanding LLC</span>
+          </p>
         </div>
       </section>
     </>

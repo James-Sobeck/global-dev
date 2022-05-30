@@ -30,6 +30,7 @@ import VideoPage4 from "./module/mod4/VideoPage4";
 import PreQuiz5 from "./module/mod5/PreQuiz5";
 import PostQuiz5 from "./module/mod5/PostQuiz5";
 import VideoPage5 from "./module/mod5/VideoPage5";
+import Demo from "./module/Demo";
 
 
 export default function Routes(){
@@ -91,6 +92,12 @@ export default function Routes(){
             </Route>
             <Route path="/module5_video">
                 <VideoPage5/>
+            </Route>
+            <Route path="/user_survey"> 
+                <Survey/>
+            </Route>
+            <Route path="/user_demo">
+                <Demo/>
             </Route>
         </Switch>
     )

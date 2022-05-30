@@ -16,16 +16,7 @@ export default function VideoPage2() {
             The Five Principles
           </a>
 
-          <div class="relative z-10 inline-flex items-center space-x-3 md:ml-5 lg:justify-end">
-            <span class="inline-flex rounded-md shadow-sm">
-              <a
-                href="#"
-                class="inline-flex items-center justify-center px-4 py-2 text-base font-medium leading-6 text-white whitespace-no-wrap bg-[#5b7bf0] border-[#5b7bf0] rounded-md shadow-sm hover:bg-[#435aaf] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#5b7bf0] no-underline"
-              >
-                Sign Out
-              </a>
-            </span>
-          </div>
+         
         </div>
       </section>
 
@@ -40,8 +31,19 @@ export default function VideoPage2() {
           </span>
           <div class="w-auto pt-4">
             <Video id="7W9Rgq_te2A" />
+            
           </div>
           
+        </div>
+      </section>
+      <section class="bg-white">
+        <div class="max-w-screen-xl px-4 py-12 mx-auto space-y-8 overflow-hidden sm:px-6 lg:px-8">
+          <p class="mt-8 text-base leading-6 text-center text-gray-400">
+            <span class="block">
+              The Five Principles of Law Enforcement Professional Development
+            </span>
+            <span class="block">© Global Understanding LLC</span>
+          </p>
         </div>
       </section>
     </>
