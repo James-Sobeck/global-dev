@@ -7,27 +7,50 @@ const genPassword = require("./passwordUtils").genPassword;
 //, { failureRedirect: '/login', successRedirect: '/module1' }
 router.post('/login', passport.authenticate('local', { failureRedirect: '/login' }),
 function(req, res) {
-  res.redirect('/');
+  console.log("SDOKFJ")
+  res.json("Successfully Authenticated");
+  //res.redirect('/');
 });
+router.get('/login', (req, res, next)=>{
+  res.json("error get req")
+})
+// router.post("/login", (req, res, next) => {
+//   // passport.authenticate("local", (err, user, info) => {
+//   //   console.log("HER1E")
+//   //   console.log(user)
+//   //   if (err) throw err;
+//   //   if (!user) res.send("No User Exists");
+//   //   else {
+//   //     req.logIn(user, (err) => {
+//   //       if (err) throw err;
+//   //       console.log("HERE")
+//   //       res.send("Successfully Authenticated");
+//   //       console.log(req.user);
+//   //     });
+//   //   }
+//   // })(req, res, next);
+// });
 
 router.post('/register', (req, res, next) => {
-  const saltHash = genPassword(req.body.password);
+  //console.log(req.body);
+  //console.log(req.body.data.password)
+  const saltHash = genPassword(req.body.data.password);
   const salt = saltHash.salt;
   const hash = saltHash.hash;
 
   const newUser = {
-      email: req.body.email,
-      first_name: req.body.first_name,
-      last_name: req.body.last_name,
-      address_1: req.body.address_1,
-      address_2: req.body.address_2,
-      city: req.body.city,
-      state: req.body.state,
-      zip: req.body.zip,
-      phone_number: req.body.phone_number,
-      organization_id: req.body.organization_id,
-      module_id_complete: req.body.module_id_complete,
-      module_id_todo: req.body.module_id_todo,
+      email: req.body.data.email,
+      first_name: req.body.data.first_name,
+      last_name: req.body.data.last_name,
+      address_1: req.body.data.address_1,
+      address_2: req.body.data.address_2,
+      city: req.body.data.city,
+      state: req.body.data.state,
+      zip: req.body.data.zip,
+      phone_number: req.body.data.phone_number,
+      organization_id: req.body.data.organization_id,
+      module_id_complete: req.body.data.module_id_complete,
+      module_id_todo: req.body.data.module_id_todo,
       hash: hash,
       salt: salt,
   };

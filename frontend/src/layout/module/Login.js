@@ -5,7 +5,7 @@ import Nav from "react-bootstrap/Nav";
 import logo from "../../img/GlobalUnderstandingLogo.37b38633.png";
 import { Link } from "react-router-dom";
 import { useHistory } from "react-router";
-import {loginUser, registerUser} from "../../api/api";
+import {loginUser, registerUser, updateUser} from "../../api/api";
 
 
 export default function Login(){
@@ -56,6 +56,17 @@ export default function Login(){
         console.log(error)
       }
       return () => controller.abort();
+    }
+    
+    const handleReset = async (e) =>{
+      e.preventDefault();
+      const c = new AbortController();
+      let password = formData.password.toString();
+      try{
+        await updateUser(user.user_id,user.email, user.first_name, user.last_name, user.address_1, user.address_2, user.city, user.state, user.zip, user.phone_number, password, user.organization_id).then(window.location.reload())
+      } catch (error){
+        console.log(error)
+      }
     }
     
     return (
@@ -114,22 +125,11 @@ export default function Login(){
               <Link to="/login" class="no-underline">
                 <a
                   href="#"
-                  class="inline-flex items-center justify-center px-4 py-2 text-base font-medium leading-6 text-gray-600 whitespace-no-wrap bg-white border border-gray-200 rounded-md shadow-sm hover:bg-gray-50 focus:outline-none focus:shadow-none no-underline"
+                  class="inline-flex items-center justify-center px-4 py-2 text-base font-medium leading-6 text-white whitespace-no-wrap bg-[#5b7bf0] border-[#5b7bf0] rounded-md shadow-sm hover:bg-[#435aaf] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#5b7bf0] no-underline"
                 >
                   Sign in
                 </a>{" "}
               </Link>
-
-              <span class="inline-flex rounded-md shadow-sm">
-                <Link to="/register" class="no-underline">
-                  <a
-                    href="#"
-                    class="inline-flex items-center justify-center px-4 py-2 text-base font-medium leading-6 text-white whitespace-no-wrap bg-[#5b7bf0] border-[#5b7bf0] rounded-md shadow-sm hover:bg-[#435aaf] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#5b7bf0] no-underline"
-                  >
-                    Sign up
-                  </a>
-                </Link>
-              </span>
             </div>
           </div>
         </section>
@@ -188,7 +188,7 @@ export default function Login(){
                     <h3 class="mb-6 text-2xl font-medium text-center">
                       Reset your password!
                     </h3>
-                    <form>
+                    <form onSubmit={handleReset}>
                       <input
                         type="text"
                         name="email"

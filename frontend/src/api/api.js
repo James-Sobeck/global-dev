@@ -1,6 +1,8 @@
+import { useId } from "react";
+
 const API_BASE_URL =
    process.env.REACT_APP_API_BASE_URL || "https://cryptic-chamber-16664.herokuapp.com";
- // process.env.REACT_APP_API_BASE_URL || "http://localhost:5000";
+   //process.env.REACT_APP_API_BASE_URL || "http://localhost:5000";
 
 /**
  * Defines the default headers for these functions to work with `json-server`
@@ -46,6 +48,11 @@ export async function registerUser(email, password){
     phone_number: "1255458040",
      organization_id: "1",
     password: "password",
+    mod1:  false,
+    mod2: false,
+    mod3: false,
+    mod4:false,
+    mod5:  false,
   }
   const options = {
     method: "POST",
@@ -56,11 +63,53 @@ export async function registerUser(email, password){
   console.log(options);
   return await fetchJson(url, options, []);
 }
+export async function updateUserMod(user, modId){
+  const url = new URL(`${API_BASE_URL}/reset`);
+  if(modId = 1) user.mod1 = true;
+  if(modId = 2) user.mod2 = true;
+  if(modId = 3) user.mod3 = true;
+  if(modId = 4) user.mod4 = true;
+  if(modId = 5) user.mod5 = true;
+  const options = {
+    method: "POST",
+    headers,
+    body: JSON.stringify({data: user}),
+  };
+  return await fetchJson(url, options, []);
+}
+
+export async function updateUser(useId, email, fn, ln, a1, a2, c, s, z, n, p, orgID, mod1, mod2, mod3, mod4, mod5){
+  const url = new URL(`${API_BASE_URL}/reset`);
+  const tempUser = {
+    user_id: useId,
+    email: email,
+    first_name: fn ||"test",
+    last_name: ln || "test",
+    address_1: a1 || "test",
+    address_2: a2 || "test",
+    city: c || "test",
+    state: s || "test",
+    zip: z || "test",
+    phone_number: n || "1255458040",
+    organization_id: orgID || 1,
+    password: p || "password",
+    mod1: mod1 || false,
+    mod2: mod2 || false,
+    mod3: mod3 || false,
+    mod4: mod4 || false,
+    mod5: mod5 || false,
+  }
+  const options = {
+    method: "POST",
+    headers,
+    body: JSON.stringify({data: tempUser}),
+  };
+  //console.log(tempUser);
+  return await fetchJson(url, options, []);
+}
 
 export async function registerOrg(name, id, type, a1, a2, city, state, zip, phone_number){
   const url = new URL(`${API_BASE_URL}/org/register`);
-  
-  
   const tempOrg = {
     name: name || "test",
     ID: id || 2,
@@ -82,6 +131,8 @@ export async function registerOrg(name, id, type, a1, a2, city, state, zip, phon
   return await fetchJson(url, options, []);
 }
 
+
+
 export async function registerUsers(email, fn, ln, a1, a2, c, s, z, p, mc, mt, orgID){
   const url = new URL(`${API_BASE_URL}/register`);
   const tempUser = {
@@ -96,6 +147,11 @@ export async function registerUsers(email, fn, ln, a1, a2, c, s, z, p, mc, mt, o
     phone_number: "1255458040",
     organization_id: orgID || 1,
     password: "password",
+    mod1:  false,
+    mod2: false,
+    mod3: false,
+    mod4:false,
+    mod5:  false,
   }
   const options = {
     method: "POST",

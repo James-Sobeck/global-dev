@@ -2,21 +2,37 @@ import Button from "react-bootstrap/esm/Button"
 import logo from "../../img/GlobalUnderstandingLogo.37b38633.png";
 import { Link, useLocation } from "react-router-dom";
 import react, { useState } from "react";
+import { updateUserMod } from "../../api/api";
 
 export default function ModMenu(){
   const location = useLocation();
-  console.log(location.state.user)
-  let userArray = location.state.user.module_id_complete || [1,2];
-  console.log(userArray)
+  //console.log(location.state.user)
+  let user = location.state.user || {}; //user or null 
+  let userArray = [1];//location.state.user.module_id_complete || [1,2];
+  //console.log(userArray)
+  
+  function checkUserMod(userLocal){
+    let result = [];
+    if(userLocal.mod1) result.push(1);
+    if(userLocal.mod2) result.push(2);
+    if(userLocal.mod3) result.push(3);
+    if(userLocal.mod4) result.push(4);
+    if(userLocal.mod5) result.push(5);
+    return result;
+  }
+  let newUserArr = checkUserMod(user)
   let temp = [1,2,3,4,5];
   let numComp = 0;
   let titles = ["Psychology of Law Enforcement", "Gender Equality, Cultural Proficiency, and Social Awareness", "Non-Evasive Restraint Techniques and Levels of Force", "The Law and Ethical Decision Making", "Principles of Efficacy"];
   let links = ["/module1_pre", "/module2_pre", "/module3_pre", "/module4_pre", "/module5_pre"];
   let imgSRC = ["https://images.unsplash.com/photo-1589994965851-a8f479c573a9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80", "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80","https://images.unsplash.com/photo-1603644448048-28a7e5122f0a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80", "https://images.unsplash.com/photo-1524633712235-22da046738b4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80", "https://images.unsplash.com/photo-1589307904488-7d60ff29c975?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=700&q=80"]
+  if(location.state.completed){
+    updateUserMod(user, 1);
+  }
   function listMod(modArr){
     //eventually will take in a user and display their personal completion rate
     //let modArr = [0,1,2,3,4];
-    let filterArray = modArr.filter(ele => userArray.includes(ele));
+    let filterArray = modArr.filter(ele => newUserArr.includes(ele));
     
     //filterArray is completed modules
     
@@ -29,7 +45,7 @@ export default function ModMenu(){
         //completed module
         return (
           <div class="w-full border border-gray-200 rounded-lg  shadow-sm" key={module}>
-            <div class="bg-gray-200 relative" >
+            <div class="bg-gray-300 relative" >
               <div className="ribbon"><span>Completed</span> </div>
                   <div class="flex flex-col items-center justify-center p-10 relative h-64">
                     <img
@@ -43,14 +59,14 @@ export default function ModMenu(){
                     <p class="font-medium text-blue-500">{titles[module-1]}</p>
                   </div>
                   <div class="flex border-t border-gray-200 divide-x divide-gray-200 justify-center my-auto h-32">
-                    <Link to= {links[module-1]} >
+                    
                     <button>
                       <a
-                        class="flex items-center w-full px-6 py-3 mb-3 text-lg text-white bg-[#5b7bf0] rounded-md sm:mb-0 hover:bg-[#435aaf] sm:w-auto no-underline mt-8"
+                        class="flex items-center w-full px-6 py-3 mb-3 text-lg text-white bg-gray-800 rounded-md sm:mb-0 hover:bg-[#435aaf] sm:w-auto no-underline mt-8"
                       >
-                        Start Module {module}
+                        Finished module {module}
                       </a>
-                    </button></Link>
+                    </button>
                   </div>
                   </div>
                 </div>
@@ -71,7 +87,7 @@ export default function ModMenu(){
                     <p class="font-medium text-blue-500">{titles[module-1]}</p>
                   </div>
                   <div class="flex border-t border-gray-200 divide-x divide-gray-200 justify-center my-auto h-32">
-                    <Link to= {links[module-1]} >
+                    <Link to= {{pathname: `${links[module-1]}`, state: {user: user}}} >
                     <button>
                       <a
                         class="flex items-center w-full px-6 py-3 mb-3 text-lg text-white bg-[#5b7bf0] rounded-md sm:mb-0 hover:bg-[#435aaf] sm:w-auto no-underline mt-8"
@@ -136,18 +152,19 @@ export default function ModMenu(){
            
           </div>
         </section>
-
+        {/* location.state.user.first_name */}
         <section class="w-full py-12 bg-white lg:py-24">
           <div class="max-w-6xl px-12 mx-auto text-center">
             <div class="space-y-12 md:text-center ">
               <div class="max-w-3xl mb-20 space-y-5 sm:mx-auto sm:space-y-4">
-                <span class="relative text-4xl font-extrabold tracking-tight sm:text-5xl">Welcome {location.state.user.first_name}!</span>
+                <span class="relative text-4xl font-extrabold tracking-tight sm:text-5xl">Welcome {"test"}!</span>
                 <h2 class="relative text-2xl font-bold tracking-tight sm:text-3xl">
                   Module Menu
                 </h2>
                 <p class="text-xl text-gray-500">
                   {/* {temp.length} / 5 */}
                   <progress value={userArray.length} max={temp.length}>   </progress>
+                  <span >{userArray.length/temp.length * 100 + "%"}</span>
                 </p>
               </div>
             </div>

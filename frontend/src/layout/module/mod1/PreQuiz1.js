@@ -1,12 +1,38 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import react, { useState } from "react";
 import logo from "../../../img/GlobalUnderstandingLogo.37b38633.png";
 export default function PreQuiz1() {
   const [start, setStart] = useState(false);
+  const [preQuestion, setPreQuestion] = useState([]);
+  let user = window.location.state.user || {};
   function changeButton() {
     setStart(!start);
   }
   
+  const initialFormData = {
+   question_1: "",
+   question_2: "",
+   question_3: "",
+   question_4: "",
+   question_5: "",
+  };
+  const [formData, setFormData] = useState({ ...initialFormData });
+  const handleFormChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const controller = new AbortController();
+    try {
+      setPreQuestion(formData); 
+    } catch (error) {
+     console.log(error);
+    }
+    return () => controller.abort();
+  };
   return (
     <>
     
@@ -193,7 +219,8 @@ export default function PreQuiz1() {
                       />
                     </div>
                     <div class="block pt-4">
-                      <Link to="/module1_video">
+                      <Link to={{pathname:"/module1_video",
+                    state: {user: user, preQuestion: preQuestion}}}>
                         <button class="w-full px-3 py-4 font-medium text-white bg-[#5b7bf0] rounded-md sm:mb-0 hover:bg-[#435aaf]">
                           Send
                         </button>

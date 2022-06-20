@@ -17,16 +17,7 @@ export default function VideoPage() {
             The Five Principles
           </a>
 
-          <div class="relative z-10 inline-flex items-center space-x-3 md:ml-5 lg:justify-end">
-            <span class="inline-flex rounded-md shadow-sm">
-              <a
-  
-                class="inline-flex items-center justify-center px-4 py-2 text-base font-medium leading-6 text-white whitespace-no-wrap bg-[#5b7bf0] border-[#5b7bf0] rounded-md shadow-sm hover:bg-[#435aaf] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#5b7bf0] no-underline"
-              >
-                Sign Out
-              </a>
-            </span>
-          </div>
+          
         </div>
       </section>
 

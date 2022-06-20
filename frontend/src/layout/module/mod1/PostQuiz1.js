@@ -1,7 +1,13 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import react, { useState } from "react";
 import logo from "../../../img/GlobalUnderstandingLogo.37b38633.png";
+import { updateUserMod } from "../../../api/api";
+
 export default function PostQuiz1() {
+  const location = useLocation();
+  
+  const[completed, setCompleted] = useState(false);
+  
   const [start, setStart] = useState(false);
   function changeButton() {
     setStart(!start);
@@ -180,7 +186,8 @@ export default function PostQuiz1() {
                       />
                     </div>
                     <div class="block pt-4">
-                      <Link to="/modules">
+                      {setCompleted(true)}
+                      <Link to={{pathname:"/modules", state: completed}}>
                       <button class="w-full px-3 py-4 font-medium text-white bg-[#5b7bf0] rounded-md sm:mb-0 hover:bg-[#435aaf]">
                         Send
                       </button></Link>
